@@ -1,9 +1,11 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
-
+import dotenv from "dotenv";
 import productRoutes from "./routes/product.route.js";
 
-const PORT = 3000;
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // to allow us to accept JSON data in the req.body, 무조건 필요
